@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    html {
+        scroll-behavior: smooth;
+        font-size: 62.5%;
+    }
+    * {
+        margin: 0; padding: 0;
+        box-sizing: border-box;
+    }
+</style>
+</head>
+<body>
+    {{!-- <h1>cool</h1>
+    {{>check}} --}}
+
+
+
+    {{#each data}}
+        <div style="background-color: lightgreen; padding: 0.5rem; font-size: 2rem; margin: 1% 0%" >
+            <p> {{this.id}} </p>
+            <p> {{this.subject}} </p>
+            <p> {{this.status}} </p>
+            <p> {{this.type}} </p>
+            <p> {{this.subject}} </p>
+
+        </div>
+    {{/each}}
+</body>
+</html>
