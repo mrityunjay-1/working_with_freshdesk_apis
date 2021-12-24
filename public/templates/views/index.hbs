@@ -19,14 +19,29 @@
 
 
     {{#each data}}
-        <div style="background-color: lightgreen; padding: 0.5rem; font-size: 2rem; margin: 1% 0%" >
-            <p> {{this.id}} </p>
-            <p> {{this.subject}} </p>
-            <p> {{this.status}} </p>
-            <p> {{this.type}} </p>
-            <p> {{this.subject}} </p>
+        <div style="display: flex; align-items: center; background: linear-gradient(to top left, blue, cyan); padding: 1% 5%; font-size: 2rem; margin: 1% 0%;" >
+            
+            <div style="width: 20%;" > <p> {{this.id}} </p> </div>
+            
+            <div>
+                <p> Subject:  {{this.subject}} </p>
+                <p> Status:  {{this.status}} </p>
+                <p> Priority:  {{this.priority}} </p>
+                <p> Type: {{this.type}} </p>
+            </div>
 
         </div>
     {{/each}}
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    let socket = io();
+
+    socket.emit("new", "Hello from frontend!!!");
+    socket.on("new_message", (data) => console.log(data));
+
+</script>
+
 </body>
 </html>

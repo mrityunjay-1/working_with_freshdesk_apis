@@ -47,7 +47,7 @@ const get_req = (path, type) => {
     
     }else {
     
-        // for generalized
+        // for generalized - i don't know figure out later!
         Request = unirest.get(url);
     
     }
@@ -56,7 +56,7 @@ const get_req = (path, type) => {
         user: API_KEY,
         pass: "dummy_password",
         sendImmediately: true
-      });
+    });
 }
 
 
@@ -86,10 +86,10 @@ const make_request_to_freshdesk = (path, type, fields, callback) => {
 
         auth_res.type('json').send(fields).end((response) => {
 
-            console.log(response);
+            // console.log(response);
 
             if(response.status >= 200 && response.status < 300){
-                console.log("ye chala hai");
+                console.log("ye chala hai! path = " + path + " , response = ", response.status);
 
                 callback(null, response);
 
